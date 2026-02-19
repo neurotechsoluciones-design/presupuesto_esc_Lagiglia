@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Presupuesto Oficial | NeuroTech Soluciones</title>
+  <meta name="description" content="Propuesta de capacitación en IA para Escuela Nº 4-229 Doctor Humberto Antonio Lagiglia">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Iconos Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            neuro: {
+              black: '#020202',
+              dark: '#0a0a0a',
+              green: '#9AFF5F',
+              blue: '#0062FF',        
+              'blue-light': '#3B82F6', 
+              glass: 'rgba(255, 255, 255, 0.03)',
+              border: 'rgba(255, 255, 255, 0.1)'
+            }
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #020202;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Fondo tecnológico */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+      -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+    }
+
+    .glass-panel {
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .btn-cyber {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+    .btn-cyber::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+    .btn-cyber:hover::before { left: 100%; }
+    .btn-cyber:active { transform: scale(0.98); }
+
+    .list-cyber li {
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    .list-cyber li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #0062FF; 
+    }
+    .list-cyber-green li::before {
+      color: #9AFF5F;
+    }
+
+    .print-hide {
+      @media print { display: none; }
+    }
+  </style>
+</head>
+<body class="min-h-screen relative pb-24">
+
+  <!-- Background Overlay -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-[-1]"></div>
+  <div class="fixed inset-0 bg-gradient-to-b from-neuro-black/80 via-transparent to-neuro-black pointer-events-none z-[-1]"></div>
+
+  <!-- HERO FULL WIDTH -->
+  <header class="w-full h-[30vh] md:h-[40vh] relative overflow-hidden mb-6 group animate-fade-in-up">
+    <div class="absolute inset-0 z-0">
+        <img src="https://github.com/neurotechsoluciones-design/neurotech-assets/blob/main/logo_neurotech_hero.png?raw=true" 
+             alt="NeuroTech Academy" 
+             class="w-full h-full object-cover object-center opacity-100">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-neuro-black/20 to-neuro-black"></div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 space-y-10 -mt-16 relative z-10">
+
+    <!-- CABECERA DEL DOCUMENTO -->
+    <div class="glass-panel rounded-2xl p-8 animate-fade-in-up shadow-[0_0_30px_rgba(0,98,255,0.1)]" style="animation-delay: 0.1s;">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-6 mb-6">
+        <div>
+          <h1 class="text-2xl md:text-3xl font-orbitron font-bold text-white mb-2 leading-tight">
+            Curso Inteligencia Artificial <br><span class="text-neuro-blue-light">en Educación</span>
+          </h1>
+          <p class="text-gray-300 text-sm font-medium tracking-wide">Innovación, Estrategia y Práctica Docente</p>
+        </div>
+        <div class="text-left md:text-right space-y-1">
+          <p class="text-xs text-gray-500 uppercase tracking-wide">Emitido: <span class="text-white">19/02/2026</span></p>
+          <p class="text-xs text-gray-500 uppercase tracking-wide">Válido hasta: <span class="text-neuro-green">05/03/2026</span></p>
+        </div>
+      </div>
+
+      <!-- Datos Cliente -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <span class="text-neuro-green text-[10px] font-orbitron uppercase mb-1 block">Institución Destinataria</span>
+          <h3 class="text-lg font-bold text-white leading-tight">Escuela Nº 4-229 <br>Dr. Humberto Antonio Lagiglia</h3>
+          <p class="text-gray-400 text-xs mt-1">San Rafael, Mendoza</p>
+        </div>
+        <div>
+          <span class="text-neuro-blue-light text-[10px] font-orbitron uppercase mb-1 block">Destinatarios</span>
+          <ul class="text-gray-300 text-xs md:text-sm space-y-1 list-cyber">
+            <li>Equipo Directivo</li>
+            <li>Profesores de diversas áreas</li>
+            <li>Preceptores</li>
+            <li>Servicio de Orientación Institucional</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRASE DESTACADA -->
+    <div class="text-center px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+      <blockquote class="text-lg md:text-xl font-light italic text-gray-300 relative inline-block max-w-2xl">
+        <span class="absolute -top-4 -left-2 text-4xl text-neuro-green/20">"</span>
+        La diferencia no está en tener acceso a la IA, sino en saber usarla con <span class="text-neuro-green font-semibold">criterio pedagógico</span> y visión estratégica.
+        <span class="absolute -bottom-4 -right-2 text-4xl text-neuro-green/20">"</span>
+      </blockquote>
+    </div>
+
+    <!-- CONTENEDOR DE PROPUESTAS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up" style="animation-delay: 0.3s;">
+      
+      <!-- PROPUESTA 1 -->
+      <article class="glass-panel rounded-2xl p-6 flex flex-col h-full border-t-4 border-t-neuro-blue hover:border-neuro-blue/50 transition-colors">
+        <div class="mb-4">
+          <span class="bg-neuro-blue/20 text-neuro-blue-light text-[10px] font-orbitron font-bold px-2 py-1 rounded">PROPUESTA 1</span>
+        </div>
+        <h2 class="text-xl font-orbitron font-bold text-white mb-1">Jornada Presencial</h2>
+        <h3 class="text-lg text-neuro-blue-light mb-3">IA desde Cero para la Escuela</h3>
+        
+        <div class="flex items-center gap-2 text-gray-400 text-xs mb-4 pb-4 border-b border-white/10">
+          <i data-lucide="clock" class="w-3 h-3"></i> <span>Duración: 2 Horas</span>
+        </div>
+        
+        <div class="space-y-5 flex-grow">
+          <div>
+            <h4 class="text-neuro-green text-[10px] font-bold uppercase tracking-widest mb-2">Objetivo</h4>
+            <p class="text-gray-300 text-xs leading-relaxed">
+              Instalar una base conceptual clara y común sobre inteligencia artificial y su impacto en la escuela, permitiendo una primera implementación con criterio pedagógico.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="text-neuro-green text-[10px] font-bold uppercase tracking-widest mb-2">Incluye</h4>
+            <ul class="text-gray-300 text-xs space-y-2 list-cyber">
+              <li>Conceptos esenciales de IA aplicados a educación</li>
+              <li>Demostración práctica de herramientas</li>
+              <li>Introducción a ingeniería de prompts</li>
+              <li>Criterios éticos, uso responsable y protección de datos</li>
+            </ul>
+          </div>
+
+          <div>
+             <h4 class="text-neuro-green text-[10px] font-bold uppercase tracking-widest mb-2">Resultados Esperados</h4>
+             <ul class="text-gray-300 text-xs space-y-2 list-cyber">
+               <li>Comprensión institucional compartida</li>
+               <li>Primeras aplicaciones concretas en tareas docentes</li>
+               <li>Identificación de oportunidades reales de implementación</li>
+             </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-white/10">
+          <p class="text-[10px] text-gray-500 uppercase tracking-widest text-center mb-1">Inversión Institucional</p>
+          <p class="text-3xl font-orbitron font-bold text-white text-center">$200.000</p>
+        </div>
+      </article>
+
+      <!-- PROPUESTA 2 -->
+      <article class="glass-panel rounded-2xl p-6 flex flex-col h-full border-t-4 border-t-neuro-green relative overflow-hidden group">
+        <!-- Shine effect -->
+        <div class="absolute top-0 right-0 w-32 h-32 bg-neuro-green/10 blur-[50px] rounded-full pointer-events-none group-hover:bg-neuro-green/20 transition-all"></div>
+        
+        <div class="mb-4 relative z-10">
+          <span class="bg-neuro-green/20 text-neuro-green text-[10px] font-orbitron font-bold px-2 py-1 rounded">PROPUESTA 2 (RECOMENDADA)</span>
+        </div>
+        
+        <h2 class="text-xl font-orbitron font-bold text-white mb-1 relative z-10">Formación Aplicada y Profundización</h2>
+        <h3 class="text-lg text-neuro-green mb-3 relative z-10">IA Aplicada a la Enseñanza</h3>
+        
+        <div class="flex flex-col gap-1 text-gray-400 text-xs mb-4 pb-4 border-b border-white/10 relative z-10">
+          <div class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3"></i> <span>Modalidad: Presencial</span></div>
+          <div class="flex items-center gap-2"><i data-lucide="calendar-days" class="w-3 h-3"></i> <span>Duración: 3 encuentros de 2hs (Total: 6hs)</span></div>
+        </div>
+        
+        <div class="space-y-5 flex-grow relative z-10">
+          <div>
+            <h4 class="text-neuro-green text-[10px] font-bold uppercase tracking-widest mb-2">Objetivo</h4>
+            <p class="text-gray-300 text-xs leading-relaxed">
+              Desarrollar dominio práctico de la IA para personalizar la enseñanza, optimizar la planificación y producir recursos concretos adaptados a cada área.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-neuro-green text-[10px] font-bold uppercase tracking-widest mb-2">Valor Diferencial</h4>
+            <ul class="text-gray-300 text-xs space-y-2 list-cyber-green">
+              <li>Trabajo sobre proyectos reales de la institución</li>
+              <li>Diseño de secuencias didácticas asistidas por IA</li>
+              <li>Práctica guiada con ejercicios aplicados por materia</li>
+              <li>Material interactivo y recursos listos para usar</li>
+              <li>Creación de un agente pedagógico personalizado para cada docente</li>
+              <li>Acompañamiento con devoluciones y mejora progresiva</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-neuro-green text-[10px] font-bold uppercase tracking-widest mb-2">Resultados</h4>
+            <ul class="text-gray-300 text-xs space-y-2 list-cyber-green">
+              <li>Producción concreta de materiales evaluables</li>
+              <li>Banco de prompts organizados por área</li>
+              <li>Plan de acción docente para los siguientes 90 días</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Esquema Económico -->
+        <div class="mt-6 pt-4 border-t border-white/10 relative z-10 bg-white/5 rounded-xl p-4">
+          <h4 class="text-neuro-green text-[10px] font-bold uppercase tracking-widest mb-3 text-center">Esquema Económico</h4>
+          
+          <div class="flex justify-between items-center mb-3 pb-3 border-b border-white/10">
+            <span class="text-xs text-gray-300">Inversión Institucional</span>
+            <span class="text-xl font-orbitron font-bold text-white">$200.000</span>
+          </div>
+          
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs text-gray-300">Aporte Individual<br><span class="text-[9px] text-gray-500">(Por docente)</span></span>
+            <span class="text-xl font-orbitron font-bold text-neuro-green">$30.000</span>
+          </div>
+          <p class="text-[9px] text-right text-gray-500 mt-1 italic">*Requisito mínimo: 10 docentes participantes</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ACCIONES -->
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-12 pb-10 animate-fade-in-up" style="animation-delay: 0.4s;">
+      
+      <!-- Botón Aceptar -->
+      <a href="https://wa.me/5492604087086?text=HOLA%20ACEPTO%20LA%20PROPUESTA%20para%20la%20Escuela%20Humberto%20Antonio%20Lagiglia" target="_blank" class="w-full md:w-auto btn-cyber group flex items-center justify-center gap-3 bg-neuro-green text-neuro-black font-orbitron font-bold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(154,255,95,0.4)] hover:shadow-[0_0_40px_rgba(154,255,95,0.6)]">
+        <span>ACEPTAR PROPUESTA</span>
+        <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+      </a>
+
+      <!-- Botón Dudas -->
+      <a href="https://wa.me/5492604087086?text=Hola%20tengo%20una%20consulta%20del%20presupuesto%20para%20la%20Escuela%20Humberto%20Antonio%20Lagiglia" target="_blank" class="w-full md:w-auto flex items-center justify-center gap-2 border border-white/20 text-white hover:bg-white/10 font-inter font-medium py-4 px-8 rounded-full transition-colors">
+        <i data-lucide="help-circle" class="w-4 h-4"></i>
+        <span>Tengo dudas / Consultar</span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/10 mt-8 py-6 text-center text-gray-500 text-[10px] uppercase font-orbitron">
+    <p>NeuroTech Soluciones &copy; 2026</p>
+    <p class="mt-1 text-neuro-green/50">Inteligencia que transforma</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
